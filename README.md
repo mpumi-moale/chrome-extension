@@ -1,17 +1,21 @@
 # Project Name
+Leads tracker
 
 ## Description
-Short description of your project.
+A chrome extension that allows Marketing agencies save leads by saving the url of a particular lead they want to follow up
 
 ## Installation
-Steps to install the project.
+#step 1
+- google chrome extention 
+#step 2
+- type 'leads tracker' and install extention on your browswer
 
 ## Usage
-How to use the project.
+copy and save the url
 
 ## Technologies
 - HTML
 - CSS
 - Javascript
 
-## License
+
