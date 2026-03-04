@@ -13,12 +13,9 @@ inputBtn.addEventListener("click", function() {
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
    
     renderLeads()
-
-   
-
-    
 })
 
+//  Show the url links
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
