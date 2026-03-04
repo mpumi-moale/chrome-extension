@@ -3,6 +3,16 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+// localStorage.clear()
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
+
+
+// Save button function
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
 
@@ -15,7 +25,7 @@ inputBtn.addEventListener("click", function() {
     renderLeads()
 })
 
-//  Show the url links
+//  Show saved leads
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
