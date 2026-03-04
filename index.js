@@ -12,23 +12,21 @@ if (leadsFromLocalStorage) {
     renderLeads()
 }
 
-
 // Save button function
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-
     // Clear out the input field
     inputEl.value = ""
-
     // Save myleads into local storage
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-   
     renderLeads()
 })
 
 // Delete button function
 deleteBtn.addEventListener("dblclick", function() {
+    // clear out the local storage
     localStorage.clear()
+    // clear out my leads array
     myLeads = []
     renderLeads()
 })
