@@ -22,10 +22,22 @@ if (leadsFromLocalStorage) {
 //     })   
 // })
 
-tabBtn.addEventListener("click", function(){    
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+// tabBtn.addEventListener("click", function(){    
+//     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+//         myLeads.push(tabs[0].url)
+//         localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+//         render(myLeads)
+//     })
+// })
+
+tabBtn.addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs.length === 0) return
+        
+        const currentTab = tabs[0]
+        myLeads.push(currentTab.url)
+
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
         render(myLeads)
     })
 })
