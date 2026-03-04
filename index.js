@@ -2,8 +2,8 @@ let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
 // fetching data from localStorage
-// localStorage.clear()
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 // checking if data in localStorage exist
@@ -23,6 +23,13 @@ inputBtn.addEventListener("click", function() {
     // Save myleads into local storage
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
    
+    renderLeads()
+})
+
+// Delete button function
+deleteBtn.addEventListener("dblclick", function() {
+    localStorage.clear()
+    myLeads = []
     renderLeads()
 })
 
