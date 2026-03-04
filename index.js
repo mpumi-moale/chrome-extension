@@ -9,7 +9,16 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 // checking if data in localStorage exist
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
+}
+
+//  Show saved leads
+function render(leads) {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+        listItems += "<li>" + leads[i] + "</li>"
+    }
+    ulEl.innerHTML = listItems  
 }
 
 // Save button function
@@ -19,7 +28,7 @@ inputBtn.addEventListener("click", function() {
     inputEl.value = ""
     // Save myleads into local storage
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
+    render(myLeads)
 })
 
 // Delete button function
@@ -28,14 +37,6 @@ deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
     // clear out my leads array
     myLeads = []
-    renderLeads()
+    render(myLeads)
 })
 
-//  Show saved leads
-function renderLeads() {
-    let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
-        listItems += "<li>" + myLeads[i] + "</li>"
-    }
-    ulEl.innerHTML = listItems  
-}
