@@ -6,7 +6,8 @@ A chrome extension that allows Marketing agencies save leads by saving the url o
 
 ## Installation
 #step 1
-- google chrome extention 
+- google chrome extention
+  
 #step 2
 - type 'leads tracker' and install extention on your browswer
 
