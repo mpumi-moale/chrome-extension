@@ -1,3 +1,10 @@
+// firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+const firebaseConfig = {};
+
+const app = initializeApp(firebaseConfig);
+
 let myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
